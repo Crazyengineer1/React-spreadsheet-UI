@@ -24,14 +24,18 @@ const Header = () => {
                     />
                 </div>
 
-                <div className="relative">
+                <div className="relative hover:cursor-pointer" onClick={() => {
+                    console.log("Notifications");
+                }}>
                     <BellIcon className="w-5 h-5 text-gray-700" />
                     <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full px-1.5">
                         2
                     </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 hover:cursor-pointer" onClick={() => {
+                    console.log("Profile page");
+                }}>
                     <img
                         src="https://i.pravatar.cc/32?img=1"
                         alt="John Doe"
