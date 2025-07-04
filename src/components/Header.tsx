@@ -33,7 +33,7 @@ const Header = () => {
                     </span>
                 </div>
 
-                <div className="flex items-center gap-2 hover:cursor-pointer" onClick={() => {
+                <div className="flex items-center gap-2 transition-all duration-200 hover:bg-gray-100 hover:cursor-pointer" onClick={() => {
                     console.log("Profile page");
                 }}>
                     <img
