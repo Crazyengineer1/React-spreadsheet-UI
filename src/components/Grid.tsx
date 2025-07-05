@@ -2,7 +2,7 @@ import { useReactTable, getCoreRowModel, flexRender, } from "@tanstack/react-tab
 import type { ColumnDef } from "@tanstack/react-table";
 import { spreadsheetData } from "../Data";
 import {
-    Briefcase, Calendar, CheckCircle2, User, Globe, Users, Plus,
+    Briefcase, Calendar, CheckCircle2, User, Globe, Users, Plus, SortDesc, Link
 } from "lucide-react";
 import { useMemo } from "react";
 
@@ -150,6 +150,66 @@ const Grid = () => {
         <div className="overflow-auto border-l border-t border-gray-300">
             <table className="table-fixed min-w-full text-sm border-collapse">
                 <thead>
+                    <tr className="text-sm">
+
+                        <th className="border-r border-b border-gray-300 bg-white p-0" />
+
+                        <th colSpan={4} className="border-r border-b border-gray-300 bg-gray-100">
+                            <div className="flex items-center gap-2 w-full h-full px-3 py-1">
+                                <Link className="w-4 h-4 text-blue-500" />
+                                <input
+                                    type="text"
+                                    defaultValue="Q3 Financial Overview"
+                                    className="bg-transparent focus:outline-none text-sm font-medium w-60"
+                                />
+                            </div>
+                        </th>
+                        <th className="border-r border-b border-gray-300 bg-white p-0" />
+
+                        <th className="border-r border-b border-gray-300 bg-green-100 hover:cursor-pointer" onClick={() => {
+                            console.log("ABC");
+                        }}>
+                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-green-900 font-semibold">
+                                <div className="flex items-center gap-1">
+                                    <SortDesc className="w-4 h-4" />
+                                    ABC
+                                </div>
+                                <span className="text-gray-500">•••</span>
+                            </div>
+                        </th>
+
+                        <th colSpan={2} className="border-r border-b border-gray-300 bg-purple-100 hover:cursor-pointer" onClick={() => {
+                            console.log("Answer a question");
+                        }}>
+                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-purple-900 font-semibold">
+                                <div className="flex items-center gap-1">
+                                    <SortDesc className="w-4 h-4" />
+                                    Answer a question
+                                </div>
+                                <span className="text-gray-500">•••</span>
+                            </div>
+                        </th>
+
+                        <th className="border-r border-b border-gray-300 bg-orange-100 hover:cursor-pointer" onClick={() => {
+                            console.log("Extract");
+                        }}>
+                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-orange-900 font-semibold">
+                                <div className="flex items-center gap-1">
+                                    <SortDesc className="w-4 h-4" />
+                                    Extract
+                                </div>
+                                <span className="text-gray-500">•••</span>
+                            </div>
+                        </th>
+
+                        <th className="border-r border-b border-gray-300 bg-gray-100 text-center w-10 hover:cursor-pointer hover:bg-gray-200" onClick={() => {
+                            console.log("Plus");
+                        }}>
+                            <button className="w-6 h-6 rounded-full hover:cursor-pointer flex items-center justify-center">
+                                <Plus className="w-4 h-4 text-gray-700" />
+                            </button>
+                        </th>
+                    </tr>
                     {table.getHeaderGroups().map(headerGroup => (
                         <tr key={headerGroup.id}>
                             {headerGroup.headers.map(header => (
@@ -172,10 +232,9 @@ const Grid = () => {
                                 >
                                     {flexRender(header.column.columnDef.header, header.getContext())}
                                 </th>
+
                             ))}
-                            <th className="w-10 border-r border-b border-gray-300 bg-gray-100 text-center">
-                                <Plus className="w-4 h-4 text-gray-500 cursor-pointer mx-auto" />
-                            </th>
+                            <th className="w-10 border-r border-b border-gray-300 bg-white" />
                         </tr>
                     ))}
                 </thead>
