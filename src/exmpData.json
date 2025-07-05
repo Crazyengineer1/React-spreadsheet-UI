@@ -1,0 +1,24 @@
+[
+    {
+        "jobRequest": "Launch social media campaign for product",
+        "submitted": "15-11-2024",
+        "status": "In-process",
+        "submitter": "Aisha Patel",
+        "url": "www.aishapatel.com",
+        "assigned": "Sophie Choudhury",
+        "priority": "Medium",
+        "dueDate": "20-11-2024",
+        "estValue": "6,200,000 ₹"
+    },
+    {
+        "jobRequest": "Update press kit for company redesign",
+        "submitted": "28-10-2024",
+        "status": "Need to start",
+        "submitter": "Irfan Khan",
+        "url": "www.irfankhan.com",
+        "assigned": "Tejas Pandey",
+        "priority": "High",
+        "dueDate": "30-10-2024",
+        "estValue": "3,500,000 ₹"
+    }
+]
