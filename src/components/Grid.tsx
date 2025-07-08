@@ -244,7 +244,7 @@ const Grid = () => {
                             {row.getVisibleCells().map(cell => (
                                 <td
                                     key={cell.id}
-                                    className="border-r border-b border-gray-300 px-2 py-1 whitespace-nowrap"
+                                    className="border-r border-b border-gray-300 px-2 py-1 whitespace-nowrap transition-all duration-200 hover:cursor-pointer hover:bg-gray-100 hover:border-green-200 hover:border-2"
                                     style={{
                                         minWidth: cell.column.id === "rowNumber" ? "40px" : undefined,
                                         width: cell.column.id === "rowNumber" ? "40px" : undefined,
