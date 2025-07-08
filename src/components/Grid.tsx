@@ -147,118 +147,141 @@ const Grid = () => {
     });
 
     return (
-        <div className="overflow-auto border-l border-t border-gray-300">
-            <table className="table-fixed min-w-full text-sm border-collapse">
-                <thead>
-                    <tr className="text-sm">
+        <>
+            <div className="overflow-auto border-l border-t border-gray-300">
+                <table className="table-fixed min-w-full text-sm border-collapse">
+                    <thead>
+                        <tr className="text-sm">
 
-                        <th className="border-r border-b border-gray-300 bg-white p-0" />
+                            <th className="border-r border-b border-gray-300 bg-white p-0" />
 
-                        <th colSpan={4} className="border-r border-b border-gray-300 bg-gray-100">
-                            <div className="flex items-center gap-2 w-full h-full px-3 py-1">
-                                <Link className="w-4 h-4 text-blue-500" />
-                                <input
-                                    type="text"
-                                    defaultValue="Q3 Financial Overview"
-                                    className="bg-transparent focus:outline-none text-sm font-medium w-60"
-                                />
-                            </div>
-                        </th>
-                        <th className="border-r border-b border-gray-300 bg-white p-0" />
-
-                        <th className="border-r border-b border-gray-300 bg-green-100 hover:cursor-pointer" onClick={() => {
-                            console.log("ABC");
-                        }}>
-                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-green-900 font-semibold">
-                                <div className="flex items-center gap-1">
-                                    <SortDesc className="w-4 h-4" />
-                                    ABC
+                            <th colSpan={4} className="border-r border-b border-gray-300 bg-gray-100">
+                                <div className="flex items-center gap-2 w-full h-full px-3 py-1">
+                                    <Link className="w-4 h-4 text-blue-500" />
+                                    <input
+                                        type="text"
+                                        defaultValue="Q3 Financial Overview"
+                                        className="bg-transparent focus:outline-none text-sm font-medium w-60"
+                                    />
                                 </div>
-                                <span className="text-gray-500">•••</span>
-                            </div>
-                        </th>
+                            </th>
+                            <th className="border-r border-b border-gray-300 bg-white p-0" />
 
-                        <th colSpan={2} className="border-r border-b border-gray-300 bg-purple-100 hover:cursor-pointer" onClick={() => {
-                            console.log("Answer a question");
-                        }}>
-                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-purple-900 font-semibold">
-                                <div className="flex items-center gap-1">
-                                    <SortDesc className="w-4 h-4" />
-                                    Answer a question
+                            <th className="border-r border-b border-gray-300 bg-green-100 hover:cursor-pointer" onClick={() => {
+                                console.log("ABC");
+                            }}>
+                                <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-green-900 font-semibold">
+                                    <div className="flex items-center gap-1">
+                                        <SortDesc className="w-4 h-4" />
+                                        ABC
+                                    </div>
+                                    <span className="text-gray-500">•••</span>
                                 </div>
-                                <span className="text-gray-500">•••</span>
-                            </div>
-                        </th>
+                            </th>
 
-                        <th className="border-r border-b border-gray-300 bg-orange-100 hover:cursor-pointer" onClick={() => {
-                            console.log("Extract");
-                        }}>
-                            <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-orange-900 font-semibold">
-                                <div className="flex items-center gap-1">
-                                    <SortDesc className="w-4 h-4" />
-                                    Extract
+                            <th colSpan={2} className="border-r border-b border-gray-300 bg-purple-100 hover:cursor-pointer" onClick={() => {
+                                console.log("Answer a question");
+                            }}>
+                                <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-purple-900 font-semibold">
+                                    <div className="flex items-center gap-1">
+                                        <SortDesc className="w-4 h-4" />
+                                        Answer a question
+                                    </div>
+                                    <span className="text-gray-500">•••</span>
                                 </div>
-                                <span className="text-gray-500">•••</span>
-                            </div>
-                        </th>
+                            </th>
 
-                        <th className="border-r border-b border-gray-300 bg-gray-100 text-center w-10 hover:cursor-pointer hover:bg-gray-200" onClick={() => {
-                            console.log("Plus");
-                        }}>
-                            <button className="w-6 h-6 rounded-full hover:cursor-pointer flex items-center justify-center">
-                                <Plus className="w-4 h-4 text-gray-700" />
-                            </button>
-                        </th>
-                    </tr>
-                    {table.getHeaderGroups().map(headerGroup => (
-                        <tr key={headerGroup.id}>
-                            {headerGroup.headers.map(header => (
-                                <th
-                                    key={header.id}
-                                    className={`border-r border-b border-gray-300 px-2 py-1 font-medium text-left ${header.id === "assigned"
-                                        ? "bg-green-100 text-green-800"
-                                        : header.id === "priority"
-                                            ? "bg-purple-100 text-purple-800"
-                                            : header.id === "estValue"
-                                                ? "bg-orange-100 text-orange-800"
-                                                : header.id === "dueDate"
-                                                    ? "bg-purple-100 text-purple-800"
-                                                    : "bg-gray-200 text-gray-800"
-                                        }`}
-                                    style={{
-                                        minWidth: header.id === "rowNumber" ? "40px" : "120px",
-                                        width: header.id === "rowNumber" ? "40px" : undefined,
-                                    }}
-                                >
-                                    {flexRender(header.column.columnDef.header, header.getContext())}
-                                </th>
+                            <th className="border-r border-b border-gray-300 bg-orange-100 hover:cursor-pointer" onClick={() => {
+                                console.log("Extract");
+                            }}>
+                                <div className="flex items-center justify-between w-full h-full px-3 py-1 text-sm text-orange-900 font-semibold">
+                                    <div className="flex items-center gap-1">
+                                        <SortDesc className="w-4 h-4" />
+                                        Extract
+                                    </div>
+                                    <span className="text-gray-500">•••</span>
+                                </div>
+                            </th>
 
-                            ))}
-                            <th className="w-10 border-r border-b border-gray-300 bg-white" />
+                            <th className="border-r border-b border-gray-300 bg-gray-100 text-center w-10 hover:cursor-pointer hover:bg-gray-200" onClick={() => {
+                                console.log("Plus");
+                            }}>
+                                <button className="w-6 h-6 rounded-full hover:cursor-pointer flex items-center justify-center">
+                                    <Plus className="w-4 h-4 text-gray-700" />
+                                </button>
+                            </th>
                         </tr>
-                    ))}
-                </thead>
-                <tbody>
-                    {table.getRowModel().rows.map(row => (
-                        <tr key={row.id}>
-                            {row.getVisibleCells().map(cell => (
-                                <td
-                                    key={cell.id}
-                                    className="border-r border-b border-gray-300 px-2 py-1 whitespace-nowrap transition-all duration-200 hover:cursor-pointer hover:bg-gray-100 hover:border-green-200 hover:border-2"
-                                    style={{
-                                        minWidth: cell.column.id === "rowNumber" ? "40px" : undefined,
-                                        width: cell.column.id === "rowNumber" ? "40px" : undefined,
-                                    }}
-                                >
-                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                </td>
-                            ))}
-                            <td className="border-r border-b border-gray-300" />
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                        {table.getHeaderGroups().map(headerGroup => (
+                            <tr key={headerGroup.id}>
+                                {headerGroup.headers.map(header => (
+                                    <th
+                                        key={header.id}
+                                        className={`border-r border-b border-gray-300 px-2 py-1 font-medium text-left ${header.id === "assigned"
+                                            ? "bg-green-100 text-green-800"
+                                            : header.id === "priority"
+                                                ? "bg-purple-100 text-purple-800"
+                                                : header.id === "estValue"
+                                                    ? "bg-orange-100 text-orange-800"
+                                                    : header.id === "dueDate"
+                                                        ? "bg-purple-100 text-purple-800"
+                                                        : "bg-gray-200 text-gray-800"
+                                            }`}
+                                        style={{
+                                            minWidth: header.id === "rowNumber" ? "40px" : "120px",
+                                            width: header.id === "rowNumber" ? "40px" : undefined,
+                                        }}
+                                    >
+                                        {flexRender(header.column.columnDef.header, header.getContext())}
+                                    </th>
+
+                                ))}
+                                <th className="w-10 border-r border-b border-gray-300 bg-white" />
+                            </tr>
+                        ))}
+                    </thead>
+                    <tbody>
+                        {table.getRowModel().rows.map(row => (
+                            <tr key={row.id}>
+                                {row.getVisibleCells().map(cell => (
+                                    <td
+                                        key={cell.id}
+                                        className="border-r border-b border-gray-300 px-2 py-1 whitespace-nowrap transition-all duration-200 hover:cursor-pointer hover:bg-gray-100 hover:border-green-200 hover:border-2"
+                                        style={{
+                                            minWidth: cell.column.id === "rowNumber" ? "40px" : undefined,
+                                            width: cell.column.id === "rowNumber" ? "40px" : undefined,
+                                        }}
+                                    >
+                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </td>
+                                ))}
+                                <td className="border-r border-b border-gray-300" />
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <div className="flex gap-4 px-4 py-2 border-t border-gray-300 text-sm bg-white w-full sticky bottom-0">
+                {["All Orders", "Pending", "Reviewed", "Arrived"].map((tab, index) => (
+                    <button
+                        key={tab}
+                        onClick={() => console.log(`${tab}`)}
+                        className={`px-2 py-[2px] ${index === 0
+                            ? "text-green-900 font-semibold border-b-4 border-green-700 bg-green-100"
+                            : "text-gray-600 hover:text-black hover:cursor-pointer"
+                            }`}
+                    >
+                        {tab}
+                    </button>
+                ))}
+                <button
+                    onClick={() => console.log("Add tab")}
+                    className="text-xl font-light text-gray-500 hover:text-black hover:cursor-pointer"
+                >
+                    +
+                </button>
+            </div>
+
+        </>
     );
 };
 
